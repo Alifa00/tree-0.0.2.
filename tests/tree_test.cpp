@@ -3,7 +3,7 @@
 #include "tree_class.cpp"
 
 TEST_CASE("insert,print and remove"){
-    std::string input {
+    std::string input { "
     ------------18\n
     ----------------17\n
     --------16\n
@@ -12,9 +12,8 @@ TEST_CASE("insert,print and remove"){
     --------4\n
     ----------------3\n
     ------------2\n
-        
-    };
-    std::string input1 {
+    " };
+    std::string input1 { "
     ------------18\n
     ----------------17\n
     --------16\n
@@ -22,8 +21,7 @@ TEST_CASE("insert,print and remove"){
     --------4\n
     ----------------3\n
     ------------2\n
-        
-    };
+    " };
     std::ostringstream ostream;
     tree_t<int> tree{10,4,16,2,13,18,3,17};
     tree.print(ostream);
