@@ -220,10 +220,10 @@ auto tree_t <T> ::operator == (tree_t <T>const & other) const {
 }
 template <typename T>
 bool tree_t <T> ::remove(T key) {
-    if (root_ != nullptr && (root_ - > left != nullptr || root_ -> right !=nullptr)) {
-        return root_ - > removerec(key);
+    if (root_ != nullptr && (root_ -> left != nullptr || root_ -> right !=nullptr)) {
+        return root_ -> removerec(key);
     }
-    if (root_ != nullptr && root_ - > left == nullptr && root_ -> right ==nullptr) {
+    if (root_ != nullptr && root_ -> left == nullptr && root_ -> right ==nullptr) {
         delete root_;
         root_ = nullptr;
         return true;
