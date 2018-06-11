@@ -74,17 +74,19 @@ private:
             if ((right == nullptr && source.right != right) || (source.right == nullptr && right != source.right)) {
                 return false;
             }
-            if (right == nullptr && left == nullptr && key == source.key) {
+            if(key!=source.key){
+                return false;
+            }
+            if (right == nullptr && left == nullptr ) {
                 return true;
             }
-            if (right == nullptr && left != nullptr && key == source.key && * (left) == * (source.left)) {
+            if (right == nullptr && left != nullptr  && * (left) == * (source.left)) {
                 return true;
             }
-            if (left == nullptr && right != nullptr && key ==source.key && * (right) == * (source.right)) {
+            if (left == nullptr && right != nullptr && * (right) == * (source.right)) {
                 return true;
             }
-            if (left != nullptr && right != nullptr && key ==
-                source.key && * (left) == * (source.left) && * (right) == * (source.right)) {
+            if (left != nullptr && right != nullptr && * (left) == * (source.left) && * (right) == * (source.right)) {
                     return true;
                 }
             return false;
