@@ -15,7 +15,7 @@ private:
             delete left;
             delete right;
         }
-        void insertrec(T key) {
+        bool insertrec(T key) {
             if (this -> key > key) {
                 if (this -> left != nullptr) {
                     this -> left -> insertrec(key);
@@ -23,6 +23,7 @@ private:
                 else {
                     this -> left = new node_t();
                     this -> left -> key = key;
+                    return true;
                 }
             }
             if (this -> key < key) {
@@ -32,9 +33,11 @@ private:
                 else {
                     this -> right = new node_t();
                     this -> right -> key = key;
+                    return true;
                 }
             }
-            return;
+           
+            return false;
         }
         void printrec(std::ostream & stream, int minus_num) const {
             if (this -> right != nullptr) {
